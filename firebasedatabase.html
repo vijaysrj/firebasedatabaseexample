@@ -1,0 +1,63 @@
+<html>
+
+
+<head>
+
+</head>
+
+
+<body>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	 
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  
+  let id = "123";
+  
+  let data = {};
+  
+  data["message"] = "Hello Google Firebase";
+  
+    firebase.database().ref('test/'+id).set(data,function(error) {
+                if (error) {
+                  // The write failed...
+
+                  console.log({error});
+                } else {
+
+                                       
+                    alert("success");
+                  // Data saved successfully!
+                }
+              });
+			  
+			  
+			  
+</script>
+
+
+
+
+</body>
+
+</html>
